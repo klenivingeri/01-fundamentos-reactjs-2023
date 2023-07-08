@@ -1,0 +1,15 @@
+.wrapper {
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+
+    display: grid;
+    grid-template-columns: 256px 1fr; /*1 */
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+
+/*
+    1 - 256 é o tamanho da sidebar e 1fr informa que o restante vai ter um tamanho flexivel
+*/
