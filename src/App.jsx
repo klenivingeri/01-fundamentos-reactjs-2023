@@ -16,7 +16,7 @@ function App() {
             content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit fugit nostrum quae laboriosam vitae minus, voluptatum quam quisquam non fugiat omnis dignissimos maiores id earum perferendis doloribus consequatur velit! Earum?"
           />
           <Post
-            author="Paul"
+            author="Kleniving"
             content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit fugit nostrum quae laboriosam vitae minus, voluptatum quam quisquam non fugiat omnis dignissimos maiores id earum perferendis doloribus consequatur velit! Earum?"
           />
 
