@@ -5,11 +5,11 @@ Template de feed
 
 ## Tecnologias
 ### Sites:
-[unsplash] (https://unsplash.com/pt-br)
-[figma] (https://figma.com)
+[unsplash](https://unsplash.com/pt-br)
+[figma](https://figma.com)
 
 ### Packages
-[phosphoricons]: (https://phosphoricons.com/)
+[phosphoricons](https://phosphoricons.com/)
 
 
 
