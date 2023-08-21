@@ -1,8 +1,24 @@
+import styles from './Post.module.css'
+
 export function Post(props) {
     return (
-        <div>
-            <p>{props.author}</p>
-            <p>{props.content}</p>
-        </div>
+        <article className={styles.post}>
+            <header>
+                <div className={styles.author}>
+                    <img className={styles.avatar} src='https://i.pinimg.com/originals/cf/d0/e6/cfd0e65ab7aafae09ad428810da84609.jpg' />
+                    <div className={styles.authorInfo} >
+                    <strong>Jake o cachorro</strong>
+                    <span>Web Developer</span>
+                    </div>  
+                <time title="11 de maio ás 8:13" dataTime="2023-05-11 08:13:30">Publicado  há 1h</time>
+                </div>
+            </header>
+            <div className={styles.content}>
+                <p>Fala galera</p>
+                <p>Acabei de subir mais um novo episódio da nova tempoderada de Adventure Time.</p>
+                <p><a href="">Marshall Lee</a></p>
+                <p><a href="">#Nova aventura #partiu</a></p>
+            </div>
+        </article>
     )
 }

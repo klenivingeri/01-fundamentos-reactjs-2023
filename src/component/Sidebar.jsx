@@ -11,7 +11,7 @@ export function Sidebar() {
 
       <div className={style.profile}>
           <img
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=50"
+            src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/adventure-time-hey-ice-king/e/ef/FinnHeadshot.jpg"
           />
         <strong>Erick Kleniving</strong>
         <span>Full Stack developer</span>
