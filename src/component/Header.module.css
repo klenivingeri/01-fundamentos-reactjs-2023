@@ -5,6 +5,7 @@
   align-items: center;
   padding: 1.25rem 0;
   height: 65px;
+  width: 100%;
 }
 
 .header img {

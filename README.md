@@ -14,8 +14,8 @@ Template de feed
 
 
 
-## NEW
-### JS time
+## NEW JS
+### time
 ~~~javascript 
 //component/Post
 //Ex: É uma boa pratica e ajuda com a acessibilidade manter a data original
@@ -23,7 +23,7 @@ Template de feed
 <time title="11 de maio ás 8:13" dataTime="2023-05-11 08:13:30">Publicado  há 1h</time>
 ~~~
 
-### CSS 
+## NEW CSS 
 #### rezise e footer
 ~~~css
 /*component/Post */
@@ -40,7 +40,10 @@ footer {/* Ocultar elemento */
 
 #### focus-within
 ~~~css
-/* Ex: quando qualquer elemenoto dentro do commentForm for focado, quero que o elemento footer tenha a seguinte alteração */
+/* 
+    Ex: quando qualquer elemenoto dentro do commentForm for focado,
+    quero que o elemento footer tenha a seguinte alteração
+*/
 .commentForm:focus-within footer {
     visibility:visible;
     max-height: none; /* max-height possui padrão none;
