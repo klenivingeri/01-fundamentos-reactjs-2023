@@ -1,10 +1,9 @@
 import styles from './Header.module.css'
-import IgniteLogo from '../assets/IgniteLogo.svg'
+import IgniteLogo from '../assets/adventure.png'
 export function Header() {
   return (
     <header className={styles.header}>
-      <img src={IgniteLogo}/>
-      <strong>Ingite Feed</strong>
+      <img title='Adventure Time' src={IgniteLogo}/>
     </header>
   )
 }

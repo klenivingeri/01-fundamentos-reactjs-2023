@@ -5,7 +5,7 @@ export function Sidebar() {
   return (
     <aside className={style.sidebar}>
       <img
-        src="https://images.unsplash.com/photo-1624696941338-934bf86c28b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=50"
+        src="https://cdn.akamai.steamstatic.com/steam/apps/728240/capsule_616x353.jpg?t=1669902198"
         className={style.cover}
       />
 
@@ -13,8 +13,8 @@ export function Sidebar() {
           <img
             src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/adventure-time-hey-ice-king/e/ef/FinnHeadshot.jpg"
           />
-        <strong>Erick Kleniving</strong>
-        <span>Full Stack developer</span>
+        <strong>Finn</strong>
+        <span>Aventureiro</span>
       </div>
 
       <footer>
