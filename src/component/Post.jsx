@@ -34,9 +34,9 @@ export function Post(props) {
                 </footer>
             </form>
             <div className={styles.commentList}>
-                <Comment/>
-                <Comment/>
-                <Comment/>
+                <Comment name='BMO' img='https://pm1.aminoapps.com/6592/3575d361024e66e8ee382f8ee6bb46208452d122_00.jpg' />
+                <Comment name='Princesa Jujuba' img='https://pm1.aminoapps.com/7694/f618481528d40b62fbd6ca2a1b1e30f89ba24db4r1-863-912v2_uhq.jpg' />
+                <Comment name='Rei Gelado' img='https://cdn.costumewall.com/wp-content/uploads/2016/10/ice-king-costume.jpg' />
             </div>
         </article>
     )
