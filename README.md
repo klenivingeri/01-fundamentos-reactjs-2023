@@ -11,6 +11,7 @@ Template de feed
 
 ### Packages
 [phosphoricons](https://phosphoricons.com/)
+[date-fns](https://date-fns.org/)
 
 
 
@@ -20,8 +21,22 @@ Template de feed
 //component/Post
 //Ex: É uma boa pratica e ajuda com a acessibilidade manter a data original
 
-<time title="11 de maio ás 8:13" dataTime="2023-05-11 08:13:30">Publicado  há 1h</time>
+<time title="11 de maio ás 8:13" dateTime="2023-05-11 08:13:30">Publicado  há 1h</time>
 ~~~
+~~~javascript 
+//component/Post
+//Ex: É uma boa pratica e ajuda com a acessibilidade manter a data original
+    const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR',{
+        day: '2-digit',
+        month: 'long',
+        hour: '2-digit',
+        minute:'2-digit'
+    }).format(publishedAt)
+
+    //08 de agosto às 20:00
+~~~
+
+
 
 ## NEW CSS 
 #### rezise e footer
@@ -37,6 +52,8 @@ footer {/* Ocultar elemento */
     max-height: 0;
 }
 ~~~
+
+
 
 #### focus-within
 ~~~css

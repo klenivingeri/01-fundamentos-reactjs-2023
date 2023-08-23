@@ -1,8 +1,10 @@
 import { Header } from './component/Header'
 import { Post } from './component/Post'
 import { Sidebar } from './component/Sidebar'
-
 import style from './App.module.css'
+import { posts } from './data'
+
+console.log(posts)
 
 function App() {
   return (
@@ -11,17 +13,15 @@ function App() {
       <div className={style.wrapper}>
         <Sidebar />
         <main>
-          <Post
-            author="Erick"
-            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit fugit nostrum quae laboriosam vitae minus, voluptatum quam quisquam non fugiat omnis dignissimos maiores id earum perferendis doloribus consequatur velit! Earum?"
-          />
-          <Post
-            author="Kleniving"
-            content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit fugit nostrum quae laboriosam vitae minus, voluptatum quam quisquam non fugiat omnis dignissimos maiores id earum perferendis doloribus consequatur velit! Earum?"
-          />
-
+          {posts.map(data => (
+              <Post
+                key={data.id}
+                author={data.author}
+                content={data.content}
+                publishedAt={data.publishedAt}
+              />
+            ))}
         </main>
-        
       </div>
     </div>
   )

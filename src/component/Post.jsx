@@ -3,28 +3,27 @@ import styles from './Post.module.css'
 import { Comment } from './Comment'
 import { Avatar } from './Avatar'
 
-export function Post(props) {
+export function Post({author, content, publishedAt}) {
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src='https://i.pinimg.com/originals/cf/d0/e6/cfd0e65ab7aafae09ad428810da84609.jpg' />
+                    <Avatar src={author.avatarUrl} />
                     <div className={styles.authorInfo} >
-                    <strong>Jake o cachorro</strong>
-                    <span>Aventureiro</span>
+                    <strong>{author.name}</strong>
+                    <span>{author.role}</span>
                     </div> 
                 </div> 
-                <time title="11 de maio ás 8:13" dataTime="2023-05-11 08:13:30">Publicado  há 1h</time>
+                <time title="11 de maio ás 8:13" dateTime={publishedAt} >Publicado  há 1h</time>
             </header>
 
             <div className={styles.content}>
-                <p>Fala galera 👋</p>
-                <p>Acabei de subir um novo episódio da nova tempoderada de Adventure Time.</p>
-                <p>👉 <a href="!#">Marshall Lee</a></p>
-                <p>
-                    <a href="!#">#Nova aventura</a>{' '}
-                    <a href="!#">#partiu</a>
-                </p>
+                {content.map(text => (text.type === 'paragraph' 
+                    ? <p>{text.content}</p>
+                    : text.type === 'link' 
+                        ? <p><a href="!#">{text.content}</a></p>
+                        : <a href="!#">{text.content} </a>
+                ))}
             </div>
 
             <form className={styles.commentForm} action='#'>
