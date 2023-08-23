@@ -5,10 +5,8 @@
 }
 
 .comment > img {
-    /*box-sizing:  initial;  1 opção  as bordas são domadas com o tamanho do elemento ou pode usar o calc */
-    width: 3rem;  /* 12 é a soma de todas as bordas*/
+    width: 3rem;  
     height: 3rem;
-    border-radius: 8px;
 }
 
 .commentBox {

@@ -18,15 +18,6 @@
   margin-top: calc(0px - 1.5rem - 6px); /* começa do 0px do top menos (1.5 é a metade da imagem) e (6 a metade da borda) */
 }
 
-.profile img {
-  /*box-sizing:  initial;  1 opção  as bordas são domadas com o tamanho do elemento ou pode usar o calc */
-  width: calc(3rem + 12px);  /* 12 é a soma de todas as bordas*/
-  height: calc(3rem + 12px);
-  border-radius: 8px;
-  border: 4px solid var(--gray-800);   /* borda interna */
-  outline: 2px solid var(--green-500);   /* borda extertna */
-}
-
 .profile strong {
   margin-top: 1rem;
   color: var(--gray-100);

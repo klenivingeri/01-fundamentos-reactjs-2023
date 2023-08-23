@@ -1,5 +1,6 @@
 import style from './Sidebar.module.css'
 import { PencilLine } from 'phosphor-react'
+import { Avatar } from './Avatar'
 
 export function Sidebar() {
   return (
@@ -10,7 +11,7 @@ export function Sidebar() {
       />
 
       <div className={style.profile}>
-          <img
+          <Avatar
             src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/adventure-time-hey-ice-king/e/ef/FinnHeadshot.jpg"
           />
         <strong>Finn</strong>
