@@ -9,7 +9,23 @@
     align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+    html{
+        font-size: 87.5%;
+    }
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
 
 /*
     1 - 256 é o tamanho da sidebar e 1fr informa que o restante vai ter um tamanho flexivel
+
+
+
+16 -> 100%
+14 -> x
+
+14*100/16 = 87.5
 */
+
