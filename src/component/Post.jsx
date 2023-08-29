@@ -10,6 +10,7 @@ import { useState } from 'react'
 
 export function Post({author, content, publishedAt}) {
     const [comments, setComments] = useState(commentsInit)
+    const [newCommentText, setNewCommentText] = useState('')
 
     const publishedDateFormatted = format(
         publishedAt,
@@ -22,8 +23,9 @@ export function Post({author, content, publishedAt}) {
             addSuffix: true
         })
     
+    const handleNewCommentChange = (e) => setNewCommentText(e.target.value)
+    
     const handleCreateNewComment = (e) => {
-        console.log(e)
         e.preventDefault() //Evita enviar para outra pagina
         setComments([...comments, {
             id: comments.length +1,
@@ -31,9 +33,9 @@ export function Post({author, content, publishedAt}) {
                 name: 'Princesa Jujuba',
                 avatarUrl: 'https://pm1.aminoapps.com/7694/f618481528d40b62fbd6ca2a1b1e30f89ba24db4r1-863-912v2_uhq.jpg'
             },
-            cmmnt: e.target.comment.value
+            cmmnt: newCommentText
         }])
-        e.target.comment.value = ''; //limpa
+        setNewCommentText('') //limpa
     }
 
     return (
@@ -63,6 +65,8 @@ export function Post({author, content, publishedAt}) {
                 <textarea
                     name='comment' //oque passar no name, da pra pegar no target
                     placeholder='Deixei seu comentário'
+                    onChange={handleNewCommentChange}
+                    value={newCommentText}
                 />
                 <footer>
                     <button type='submit'>Publicar</button>
