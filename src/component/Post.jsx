@@ -22,10 +22,18 @@ export function Post({author, content, publishedAt}) {
             addSuffix: true
         })
     
-    const handleCreateNewComment = () => {
-        event.preventDefault() //Evita enviar para outra pagina
-        setComments([...comments, {id: comments.length +1}])
-        
+    const handleCreateNewComment = (e) => {
+        console.log(e)
+        e.preventDefault() //Evita enviar para outra pagina
+        setComments([...comments, {
+            id: comments.length +1,
+            author:{
+                name: 'Princesa Jujuba',
+                avatarUrl: 'https://pm1.aminoapps.com/7694/f618481528d40b62fbd6ca2a1b1e30f89ba24db4r1-863-912v2_uhq.jpg'
+            },
+            cmmnt: e.target.comment.value
+        }])
+        e.target.comment.value = ''; //limpa
     }
 
     return (
@@ -53,6 +61,7 @@ export function Post({author, content, publishedAt}) {
             <form onSubmit={handleCreateNewComment} className={styles.commentForm} action='#'>
                 <strong>Deixe seu feedback</strong>
                 <textarea
+                    name='comment' //oque passar no name, da pra pegar no target
                     placeholder='Deixei seu comentário'
                 />
                 <footer>
@@ -61,7 +70,12 @@ export function Post({author, content, publishedAt}) {
             </form>
             <div className={styles.commentList}>
                { comments.map(comment => 
-                 <Comment key={comment?.id} name='BMO' src='https://pm1.aminoapps.com/6592/3575d361024e66e8ee382f8ee6bb46208452d122_00.jpg' />
+                    <Comment
+                        key={comment.id}
+                        name={comment.author.name}
+                        src={comment.author.avatarUrl}
+                        comment={comment.cmmnt}
+                    />
                 )}
             </div>
         </article>

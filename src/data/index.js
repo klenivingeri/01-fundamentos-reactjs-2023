@@ -75,8 +75,18 @@ export const posts = [
 export const commentsInit = [
   {
     id: 1,
+    author: {
+      avatarUrl: 'https://pm1.aminoapps.com/6592/3575d361024e66e8ee382f8ee6bb46208452d122_00.jpg',
+      name: 'BMO',
+    },
+    cmmnt: 'Muito bom, Parabéns !! 👏👏'
   },
   {
     id: 2,
+    author: {
+      avatarUrl: 'https://cdn.costumewall.com/wp-content/uploads/2016/10/ice-king-costume.jpg',
+      name: 'Rei Gelado',
+    },
+    cmmnt: 'Parabéns o/ 👏👏'
   }
 ]
