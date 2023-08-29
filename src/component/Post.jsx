@@ -5,7 +5,12 @@ import styles from './Post.module.css'
 import { Comment } from './Comment'
 import { Avatar } from './Avatar'
 
+import { commentsInit } from '../data'
+import { useState } from 'react'
+
 export function Post({author, content, publishedAt}) {
+    const [comments, setComments] = useState(commentsInit)
+
     const publishedDateFormatted = format(
         publishedAt,
         "dd 'de' LLLL 'ás' HH:mm'h'",
@@ -17,6 +22,12 @@ export function Post({author, content, publishedAt}) {
             addSuffix: true
         })
     
+    const handleCreateNewComment = () => {
+        event.preventDefault() //Evita enviar para outra pagina
+        setComments([...comments, {id: comments.length +1}])
+        
+    }
+
     return (
         <article className={styles.post}>
             <header>
@@ -32,14 +43,14 @@ export function Post({author, content, publishedAt}) {
 
             <div className={styles.content}>
                 {content.map(text => (text.type === 'paragraph' 
-                    ? <p>{text.content}</p>
+                    ? <p key={text.content}>{text.content}</p>
                     : text.type === 'link' 
-                        ? <p><a href="!#">{text.content}</a></p>
-                        : <a href="!#">{text.content} </a>
+                        ? <p key={text.content} ><a href="!#">{text.content}</a></p>
+                        : <a key={text.content} href="!#">{text.content} </a>
                 ))}
             </div>
 
-            <form className={styles.commentForm} action='#'>
+            <form onSubmit={handleCreateNewComment} className={styles.commentForm} action='#'>
                 <strong>Deixe seu feedback</strong>
                 <textarea
                     placeholder='Deixei seu comentário'
@@ -49,9 +60,9 @@ export function Post({author, content, publishedAt}) {
                 </footer>
             </form>
             <div className={styles.commentList}>
-                <Comment name='BMO' src='https://pm1.aminoapps.com/6592/3575d361024e66e8ee382f8ee6bb46208452d122_00.jpg' />
-                <Comment name='Princesa Jujuba' src='https://pm1.aminoapps.com/7694/f618481528d40b62fbd6ca2a1b1e30f89ba24db4r1-863-912v2_uhq.jpg' />
-                <Comment name='Rei Gelado' src='https://cdn.costumewall.com/wp-content/uploads/2016/10/ice-king-costume.jpg' />
+               { comments.map(comment => 
+                 <Comment key={comment?.id} name='BMO' src='https://pm1.aminoapps.com/6592/3575d361024e66e8ee382f8ee6bb46208452d122_00.jpg' />
+                )}
             </div>
         </article>
     )

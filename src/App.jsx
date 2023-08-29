@@ -4,8 +4,6 @@ import { Sidebar } from './component/Sidebar'
 import style from './App.module.css'
 import { posts } from './data'
 
-console.log(posts)
-
 function App() {
   return (
     <div>
