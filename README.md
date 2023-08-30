@@ -53,6 +53,12 @@ footer {/* Ocultar elemento */
 }
 ~~~
 
+#### not
+~~~css
+/*component/Post */
+.commentForm button[type=submit]:not(:disabled):hover 
+/* Quando o botão estiber disabilidade o hover não vai funcionar */
+~~~
 
 
 #### focus-within
