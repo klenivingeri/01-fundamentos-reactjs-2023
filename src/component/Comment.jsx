@@ -7,10 +7,12 @@ export function Comment({id, src, name, comment, onDeleteComment}) {
     const [likeCount, setLikeCount ] = useState(0)
 
     const handleThumbsUpComment = () => {
-        setLikeCount(likeCount+1)
+        const add = likeCount+1
+        setLikeCount(add) // valor atual 
     }
     const handleThumbsDownComment = () => {
-        setLikeCount(likeCount-1)
+        setLikeCount((sub) => sub - 1) // valor atual
+        
     }
 
     const handleDeleteComment = () => {
