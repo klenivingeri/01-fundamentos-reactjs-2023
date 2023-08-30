@@ -68,3 +68,10 @@ footer {/* Ocultar elemento */
 ~~~
 
 
+
+## Anotações
+#### 3 principais momentos em que um component é renderizao novamente no React.
+1. Quando o estado é alterado.
+2. Quando a propriedade é alterada.
+3. Quando um component pai é renderizado novamente
+_Obs: O React compara os elementos com base nas key, A key ajuda o React a entender que não precisa executar aquele elemento novamente._

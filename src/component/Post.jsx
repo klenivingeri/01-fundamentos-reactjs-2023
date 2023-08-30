@@ -38,6 +38,11 @@ export function Post({author, content, publishedAt}) {
         setNewCommentText('') //limpa
     }
 
+    const deleteComment = (id) => {
+        const commentsWithoutDeleteOne = comments.filter(comment => comment.id !== id)
+        setComments(commentsWithoutDeleteOne);
+    }
+
     return (
         <article className={styles.post}>
             <header>
@@ -76,9 +81,11 @@ export function Post({author, content, publishedAt}) {
                { comments.map(comment => 
                     <Comment
                         key={comment.id}
+                        id={comment.id}
                         name={comment.author.name}
                         src={comment.author.avatarUrl}
                         comment={comment.cmmnt}
+                        onDeleteComment={deleteComment}
                     />
                 )}
             </div>
