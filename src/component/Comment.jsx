@@ -19,6 +19,12 @@ export function Comment({id, src, name, comment, onDeleteComment}) {
         onDeleteComment(id)
     }
 
+    const showColor = likeCount == 0 
+        ? '' 
+        : likeCount > 0
+            ? styles.up 
+            : styles.down 
+    
     return(
         <div className={styles.comment}>
             <Avatar hasBorder={false} src={src} />
@@ -45,7 +51,7 @@ export function Comment({id, src, name, comment, onDeleteComment}) {
                     <button className={styles.thumbsDown} onClick={handleThumbsDownComment}>    
                         <ThumbsDown size={20} />
                     </button>
-                    <span>{likeCount}</span>
+                    <span className={showColor}>{Math.abs(likeCount)}</span>
                 </footer>
             </div>
         </div>

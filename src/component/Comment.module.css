@@ -61,9 +61,13 @@
     display: flex;
 }
 
-.commentBox footer button:focus {
-    outline: transparent;
-    box-shadow: none;
+
+
+.commentBox footer .thumbsDown {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .commentBox footer .thumbsDown:hover {
@@ -85,13 +89,25 @@
     color: var(--green-300);
 }
 
-.commentBox footer button svg {
-    margin-right: 0.5rem;
+.commentBox footer button:focus {
+    outline: transparent;
+    box-shadow: none;
 }
 
-.commentBox footer button span::before {
-    padding: 0 0.25rem;
+.commentBox footer button svg {
+    margin-right: 0.35rem;
+}
+
+.commentBox footer span::before {
+    padding: 0 0.5rem;
     content: '\2022'
 }
 
+.up {
+    color: var(--green-300);
+    
+}
 
+.down {
+    color: var(--red-500)
+}
