@@ -58,6 +58,16 @@
 
 .commentBox footer {
     margin-top: 1rem;
+    display: flex;
+}
+
+.commentBox footer button:focus {
+    outline: transparent;
+    box-shadow: none;
+}
+
+.commentBox footer .thumbsDown:hover {
+    color: var(--red-500)
 }
 
 .commentBox footer button {

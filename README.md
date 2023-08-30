@@ -64,7 +64,7 @@ footer {/* Ocultar elemento */
 #### focus-within
 ~~~css
 /* 
-    Ex: quando qualquer elemenoto dentro do commentForm for focado,
+    Ex: quando qualquer elemento dentro do commentForm for focado,
     quero que o elemento footer tenha a seguinte alteração
 */
 .commentForm:focus-within footer {
