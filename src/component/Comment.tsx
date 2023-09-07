@@ -3,7 +3,18 @@ import styles from './Comment.module.css'
 import { Avatar } from './Avatar'
 import { useState } from 'react'
 
-export function Comment({id, src, name, comment, onDeleteComment}) {
+interface CommentsInit {
+    id: number;
+    src: {
+        avatarUrl: string;
+        name: string;
+    },
+    name: string;
+    comment: string;
+    onDeleteComment: (comment: number) => void
+}
+
+export function Comment({id, src, name, comment, onDeleteComment}: CommentsInit) {
     const [likeCount, setLikeCount ] = useState(0)
 
     const handleThumbsUpComment = () => {

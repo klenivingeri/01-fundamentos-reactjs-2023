@@ -1,83 +1,27 @@
-# App feed
+# React + TypeScript + Vite
 
-### Projeto 
-Template de feed
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Tecnologias
-### Sites:
-[unsplash](https://unsplash.com/pt-br)
+Currently, two official plugins are available:
 
-[figma](https://figma.com)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Packages
-[phosphoricons](https://phosphoricons.com/)
-[date-fns](https://date-fns.org/)
+## Expanding the ESLint configuration
 
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
+- Configure the top-level `parserOptions` property like this:
 
-## NEW JS
-### time
-~~~javascript 
-//component/Post
-//Ex: É uma boa pratica e ajuda com a acessibilidade manter a data original
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
 
-<time title="11 de maio ás 8:13" dateTime="2023-05-11 08:13:30">Publicado  há 1h</time>
-~~~
-~~~javascript 
-//component/Post
-//Ex: É uma boa pratica e ajuda com a acessibilidade manter a data original
-    const publishedDateFormatted = new Intl.DateTimeFormat('pt-BR',{
-        day: '2-digit',
-        month: 'long',
-        hour: '2-digit',
-        minute:'2-digit'
-    }).format(publishedAt)
-
-    //08 de agosto às 20:00
-~~~
-
-
-
-## NEW CSS 
-#### rezise e footer
-~~~css
-/*component/Post */
-textarea {
-    rezise: none; /* Não permite que o campo seja redimensionado */
-}
-
-footer {/* Ocultar elemento */
-    /* display: none; Evitar usar display none, pq ele não é bom para acessibilidade */
-    visibility: hidden;
-    max-height: 0;
-}
-~~~
-
-#### not
-~~~css
-/*component/Post */
-.commentForm button[type=submit]:not(:disabled):hover 
-/* Quando o botão estiber disabilidade o hover não vai funcionar */
-~~~
-
-
-#### focus-within
-~~~css
-/* 
-    Ex: quando qualquer elemento dentro do commentForm for focado,
-    quero que o elemento footer tenha a seguinte alteração
-*/
-.commentForm:focus-within footer {
-    visibility:visible;
-    max-height: none; /* max-height possui padrão none;
-}
-~~~
-
-
-
-## Anotações
-#### 3 principais momentos em que um component é renderizao novamente no React.
-1. Quando o estado é alterado.
-2. Quando a propriedade é alterada.
-3. Quando um component pai é renderizado novamente
-_Obs: O React compara os elementos com base nas key, A key ajuda o React a entender que não precisa executar aquele elemento novamente._
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

@@ -6,10 +6,41 @@ import { Comment } from './Comment'
 import { Avatar } from './Avatar'
 
 import { commentsInit } from '../data'
-import { useState } from 'react'
+import { 
+    useState,
+    FormEvent,
+    ChangeEvent,
+    InvalidEvent 
+} from 'react'
 
-export function Post({author, content, publishedAt}) {
-    const [comments, setComments] = useState(commentsInit)
+interface Author {
+    avatarUrl: string;
+    name: string;
+    role: string;
+}
+
+interface Content {
+    type: 'paragraph' | 'link';
+    content: string;
+}
+
+interface PostProps {
+    author: Author;
+    publishedAt: Date;
+    content: Content[];
+}
+
+interface CommentsInit {
+    id: number;
+    author: {
+        avatarUrl: string;
+        name: string;
+    },
+    cmmnt: string;
+}
+
+export function Post({author, content, publishedAt}: PostProps) {
+    const [comments, setComments] = useState(commentsInit<CommentsInit[]>)
     const [newCommentText, setNewCommentText] = useState('')
 
     const publishedDateFormatted = format(
@@ -23,16 +54,16 @@ export function Post({author, content, publishedAt}) {
             addSuffix: true
     })
     
-    const handleNewCommentChange = (e) => {
+    const handleNewCommentChange = (e: ChangeEvent<HTMLTextAreaElement> ) => {
         e.target.setCustomValidity('')
         setNewCommentText(e.target.value)
     }
 
-    const handleNewCommentInvalid = (e) => {
+    const handleNewCommentInvalid = (e: InvalidEvent<HTMLTextAreaElement> ) => {
         e.target.setCustomValidity('Esse campo é obrigatório')
     }
 
-    const handleCreateNewComment = (e) => {
+    const handleCreateNewComment = (e: FormEvent) => {
         e.preventDefault() //Evita enviar para outra pagina
         setComments([...comments, {
             id: comments.length +1,
@@ -45,7 +76,7 @@ export function Post({author, content, publishedAt}) {
         setNewCommentText('') //limpa
     }
 
-    const deleteComment = (id) => {
+    const deleteComment = (id: number) => {
         const commentsWithoutDeleteOne = comments.filter(comment => comment.id !== id)
         setComments(commentsWithoutDeleteOne);
     }
@@ -88,7 +119,7 @@ export function Post({author, content, publishedAt}) {
                 </footer>
             </form>
             <div className={styles.commentList}>
-               { comments.map(comment => 
+               { comments.map((comment) => 
                     <Comment
                         key={comment.id}
                         id={comment.id}
