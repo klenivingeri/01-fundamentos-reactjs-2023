@@ -1,4 +1,4 @@
-import style from './Sidebar.module.css'
+import style from './sidebar.module.css'
 import { PencilLine } from 'phosphor-react'
 import { Avatar } from './Avatar'
 
